@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Fidelizando.Pages.PontosPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center">
+                <Label Text="Você possui:" FontSize="50"/>
+                <Label Text="{Binding Usuario.Pontos}" FontSize="100" HorizontalTextAlignment="Center"/>
+                <Label HorizontalTextAlignment="Center" Text="pontos." FontSize="50"/>
+            </StackLayout>
+            <StackLayout>
+                <Button Margin="10" Text="Adicionar Ponto" Command="{Binding AdicionarPontosCommand}"></Button>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

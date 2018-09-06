@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pages="clr-namespace:Fidelizando.Pages"
+             x:Class="Fidelizando.Pages.IndexPage">
+    <MasterDetailPage.Master>
+        <ContentPage Title="Menu" BackgroundColor="#e8e8e8">
+            <StackLayout Orientation="Vertical">
+                <StackLayout BackgroundColor="#4d79ff" HeightRequest="75">
+                    <Label Text="Cartão Fidelidade" FontSize="20"
+                           VerticalOptions="CenterAndExpand"
+                           TextColor="White" HorizontalOptions="Center">
+
+                    </Label>
+                </StackLayout>
+
+                <ListView x:Name="NavigationDrawerList" RowHeight="60"
+                          SeparatorVisibility="None" BackgroundColor="#e8e8e8"
+                          ItemSelected="OnMenuItemSelected">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout VerticalOptions="FillAndExpand"
+                                             Orientation="Horizontal"
+                                             Padding="20,10,0,10" Spacing="20">
+                                    <Image Source="{Binding Icone}"
+                                           WidthRequest="40" HeightRequest="40"
+                                           VerticalOptions="Center">
+                                    </Image>
+                                    <Label Text="{Binding Titulo}" 
+                                           FontSize="Medium"
+                                           VerticalOptions="Center"
+                                           TextColor="Black">
+                                    </Label>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <StackLayout>
+                    <Button Text="Sair" Margin="20" BackgroundColor="Blue" TextColor="White" Command="{Binding LogoutCommand}" VerticalOptions="EndAndExpand"/>
+                </StackLayout>
+            </StackLayout>
+            
+        </ContentPage>
+    </MasterDetailPage.Master>
+    <MasterDetailPage.Detail>
+        <NavigationPage>
+            <x:Arguments>
+                <pages:HomePage />
+            </x:Arguments>
+        </NavigationPage>
+    </MasterDetailPage.Detail>
+</MasterDetailPage>

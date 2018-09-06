@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Fidelizando.Pages.RegisterPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="10">
+                <Entry Placeholder="Nome completo" Text="{Binding Usuario.Nome}" FontSize="Medium" HorizontalTextAlignment="Center"/>
+                <Entry Placeholder="Email" Text="{Binding Usuario.Email}" FontSize="Medium" HorizontalTextAlignment="Center" />
+                <Entry Placeholder="Senha" Text="{Binding Usuario.Password}" IsPassword="True" FontSize="Medium" HorizontalTextAlignment="Center" />
+                <Button Text="Finalizar cadastro" Command="{Binding RegisterCommand}" HorizontalOptions="Center" BackgroundColor="#4d79ff" TextColor="White" />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
